@@ -12,7 +12,7 @@ import {
 import CommentPage from "./components/CommentPage";
 import TokenExchange from "./components/TokenExchange";
 import ChoosePage from "./components/ChoosePage";
-
+import MarketLanding from "./components/MarketLanding";
 
 const router = createBrowserRouter([
     {
@@ -34,8 +34,7 @@ const router = createBrowserRouter([
     {
       path: 'bounty/comments' ,
       element: (<CommentPage/>)//Navbar needed
-        path: 'leaderboard',
-        element: (<Leaderboard />)
+        
     },
     {
         path: 'buytoken',
@@ -44,7 +43,11 @@ const router = createBrowserRouter([
     {
         path: 'register',
         element: (<ChoosePage />)
-    }
+    },
+    {
+        path: 'marketplace',
+        element: (<MarketLanding/>)
+    },
 
 ])
 

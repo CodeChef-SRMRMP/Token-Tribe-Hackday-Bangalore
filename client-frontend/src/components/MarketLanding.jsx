@@ -1,27 +1,56 @@
 import React from 'react';
 import "./MarketLanding.css";
-import NewNavbar from './NewNavbar';
+import Navbar from './Navbar';
 
+const Shop = ({ object, properties, size , imgUrl, price}) => {
+    return (
+      <div className='card'>
+        <div className='card-head'>
+         <h2 className='card-h'>{object}</h2>
+         <img src={imgUrl} alt="" className="image_al" />
+        </div>
+         <div className='descrip'>
+         {properties}
+         <div className='buy'>
+           <strong>Price:</strong> {price} $Tribe
+          <button className='bttn3'>Buy Now</button>
+         </div>
+         </div>
+   
+       </div>
+    )
+}  
 const MarketLanding = () => {
   return (
-    <div>
-        <div style = {{ paddingBottom: "1rem"}}>
-            <NewNavbar/>
-        </div>
-
-        <div className='beech_wala'>
-            <div className='beech_left'>
-                <h1>Redeem Your $TRIBE Tokens</h1>
-                <p>Perform Tasks -earn rewards-redeem with Merchs/Tickets</p>
-                <button>Visit Marketplace</button>
-            </div>
-
-            <div className='beech_right'>
-                <img className='beech_image' src= {require("../images/MarketLanding.png")} alt="" />
-            </div>
-        </div>
+    <div className="master">
+      <div className="donate">
+      <div className="title">
+        <Navbar />
+      </div>
+      <Shop
+        object='NFT Tickets Mint '
+        properties="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus aliquam eleifend mi in nulla posuere sollicitudin. "
+        imgUrl={require("../images/MarketPlace/Nft_Tickets.png")}
+        price="30"
+      />
+      <Shop 
+        object='Customs Tshirts '
+        properties="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus aliquam eleifend mi in nulla posuere sollicitudin. "
+        imgUrl={require("../images/MarketPlace/tshirt.jpg")}
+        price="70"
+      />
+      <Shop 
+        object='Custom Hoodies'
+        properties="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Metus aliquam eleifend mi in nulla posuere sollicitudin. "
+        imgUrl={require("../images/MarketPlace/hoodies.png")}
+        price="50"
+      />
     </div>
-  )
+    </div>
+ 
+ )
+
 }
+
 
 export default MarketLanding
